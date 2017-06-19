@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 class Solution {
 	private int n, m, k;
 	double el;
-	private double[] mas1, mas2, mas3;
+	private OneDimensialArray mas1, mas2, mas3;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 	void start() {
@@ -21,19 +21,19 @@ class Solution {
 				if (n <= 0) {
 					continue;
 				}
-				mas1 = new double[n];
+				mas1 = new OneDimensialArray(n);
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}
 		}
 		System.out.printf("%s", DialogMessages.INPUT_ELN.getMess());
-		for (int i = 0; i < mas1.length; i++) {
+		for (int i = 0; i < mas1.getSize(); i++) {
 			while (true) {
 				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
 				try {
 					string = reader.readLine();
 					el = Double.parseDouble(string);
-					mas1[i] = el;
+					mas1.getMas()[i] = el;
 					break;
 				} catch (IOException | NumberFormatException e) {
 				}
@@ -47,19 +47,19 @@ class Solution {
 				if (m <= 0) {
 					continue;
 				}
-				mas2 = new double[m];
+				mas2 = new OneDimensialArray(m);
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}
 		}
 		System.out.printf("%s", DialogMessages.INPUT_ELN.getMess());
-		for (int i = 0; i < mas2.length; i++) {
+		for (int i = 0; i < mas2.getSize(); i++) {
 			while (true) {
 				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
 				try {
 					string = reader.readLine();
 					el = Double.parseDouble(string);
-					mas2[i] = el;
+					mas2.getMas()[i] = el;
 					break;
 				} catch (IOException | NumberFormatException e) {
 				}
@@ -73,30 +73,14 @@ class Solution {
 				if (k <= 0 || k > n) {
 					continue;
 				}
-				mas3 = new double[n + m];
+				mas3 = new OneDimensialArray(n + m);
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}
 		}
 		System.out.printf("%s\n", DialogMessages.RESULT.getMess());
-		arrayInArray2(mas1, mas2, k);
-		for (double d : mas3) {
-			System.out.printf("%-6.3f\n", d);
-		}
+		mas3 = mas3.arrayInArray2(mas1, mas2, k);
+		System.out.printf("%s", mas3.printArray());
 	}
 
-	private double[] arrayInArray2(double[] mas1, double[] mas2, int k) {
-		for (int i = 0; i < mas1.length; i++) {
-			mas3[i] = mas1[i];
-		}
-		for (int i = 0; i < mas1.length; i++) {
-			if (i >= k) {
-				mas3[i + m] = mas3[i];
-			}
-		}
-		for (int i = 0; i < mas2.length; i++) {
-			mas3[k + i] = mas2[i];
-		}
-		return mas3;
-	}
 }

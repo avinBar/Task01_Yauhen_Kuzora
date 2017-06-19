@@ -1,6 +1,7 @@
 package pr3;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 import pr3.DialogMessages;
@@ -21,7 +22,7 @@ class Solution {
 					continue;
 				}
 				break;
-			} catch (Exception e) {
+			} catch (IOException | NumberFormatException e) {
 				System.out.printf("%s", DialogMessages.INPUT_A.getMess());
 			}
 		}
@@ -34,7 +35,7 @@ class Solution {
 					continue;
 				}
 				break;
-			} catch (Exception e) {
+			} catch (IOException | NumberFormatException e) {
 				System.out.printf("%s", DialogMessages.INPUT_B.getMess());
 			}
 		}

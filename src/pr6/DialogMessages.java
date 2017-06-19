@@ -1,16 +1,15 @@
 package pr6;
 
 enum DialogMessages {
-	InputThree("Please, input three numbers.\n"), 
-	FirstNumber("Please, input first number: \n"),
-	SecondNumber("Please, input second number: \n"),
-	ThirdNumber("Please, input third number: \n"),
-	Result("Result :");
+	INPUT_THREE("Please, input three numbers.\n"), 
+	FIRST_NUMBER("Please, input first number: \n"),
+	SECOND_NUMBER("Please, input second number: \n"),
+	THIRD_NUMBER("Please, input third number: \n"),
+	RESULT("Result :");
 	private String message;
 
 	private DialogMessages(String message) {
 		this.message = message;
-
 	}
 
 	String getMess() {

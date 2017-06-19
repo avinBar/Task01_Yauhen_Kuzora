@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 class Solution {
 	private int n, k, el;
-	private int[] mas;
+	private OneDimensionalArray array;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 	void start() {
@@ -21,7 +21,6 @@ class Solution {
 				if (n <= 0) {
 					continue;
 				}
-				mas = new int[n];
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}
@@ -40,33 +39,23 @@ class Solution {
 			}
 		}
 
+		array = new OneDimensionalArray(n, k);
 		System.out.printf("%s", DialogMessages.INPUT_MAS.getMess());
-		for (int i = 0; i < mas.length; i++) {
+		for (int i = 0; i < array.getSize(); i++) {
 			while (true) {
-				System.out.printf("%s %d:", DialogMessages.INPUT_EL.getMess(), i);
+				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
 				try {
 					string = reader.readLine();
 					el = Integer.parseInt(string);
 					if (el < 0) {
 						continue;
 					}
-					mas[i] = el;
+					array.getArray()[i] = el;
 					break;
 				} catch (IOException | NumberFormatException e) {
 				}
-
 			}
 		}
-		System.out.printf("%s %-7d\n", DialogMessages.RESULT.getMess(), findSum(mas, k));
-	}
-
-	private int findSum(int[] mas, int k) {
-		int sum = 0;
-		for (int i : mas) {
-			if ((i % k) == 0) {
-				sum += i;
-			}
-		}
-		return sum;
+		System.out.printf("%s %-7d\n", DialogMessages.RESULT.getMess(), array.findSum());
 	}
 }

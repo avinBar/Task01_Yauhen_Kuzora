@@ -1,14 +1,13 @@
 package pr4;
 
 enum DialogMessages {
-	InputX("Please, input number x:\n"), 
-	InputY("Please, input number y:\n"),
-	Result("Result :");
+	INPUT_X("Please, input number x:\n"), 
+	INPUT_Y("Please, input number y:\n"), 
+	RESULT("Result :");
 	private String message;
 
 	private DialogMessages(String message) {
 		this.message = message;
-
 	}
 
 	String getMess() {

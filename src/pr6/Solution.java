@@ -5,64 +5,45 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Solution {
+	private Finder finder;
 	private double first, second, third;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 	void start() {
 		String string;
-		System.out.printf("%s", DialogMessages.InputThree.getMess());
+		System.out.printf("%s", DialogMessages.INPUT_THREE.getMess());
 
 		while (true) {
-			System.out.printf("%s", DialogMessages.FirstNumber.getMess());
+			System.out.printf("%s", DialogMessages.FIRST_NUMBER.getMess());
 			try {
 				string = reader.readLine();
 				first = Double.parseDouble(string);
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.FirstNumber.getMess());
+				System.out.printf("%s", DialogMessages.FIRST_NUMBER.getMess());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.SecondNumber.getMess());
+			System.out.printf("%s", DialogMessages.SECOND_NUMBER.getMess());
 			try {
 				string = reader.readLine();
 				second = Double.parseDouble(string);
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.SecondNumber.getMess());
+				System.out.printf("%s", DialogMessages.SECOND_NUMBER.getMess());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.ThirdNumber.getMess());
+			System.out.printf("%s", DialogMessages.THIRD_NUMBER.getMess());
 			try {
 				string = reader.readLine();
 				third = Double.parseDouble(string);
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.ThirdNumber.getMess());
+				System.out.printf("%s", DialogMessages.THIRD_NUMBER.getMess());
 			}
 		}
-		System.out.printf("%s %6.3f", DialogMessages.Result.getMess(), findResult(first, second, third));
-
-	}
-
-	private double findResult(double first, double second, double third) {
-		double result;
-		double min = first;
-		double max = first;
-		if (second >= max) {
-			max = second;
-		} 
-		if (third >= max) {
-			max = third;
-		}
-		if (second <= min) {
-			min = second;
-		}
-		if (third <= min) {
-			min = third;
-		}
-		result = max + min;
-		return result;
+		finder = new Finder(first, second, third);
+		System.out.printf("%s %6.3f", DialogMessages.RESULT.getMess(), finder.findResult());
 	}
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Solution {
+	private Equation equation;
 	private double a, b, dx;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -48,24 +49,7 @@ class Solution {
 				System.out.printf("%s", DialogMessages.DX.getMess());
 			}
 		}
-		findResult(a, b, dx);
-	}
-
-	private void findResult(double a, double b, double dx) {
-		double result;
-		double x = a;
-		System.out.printf("|%3s%-7s%3s|%3s%-7s%3s|\n", " ", "x", " ", " ", "f(x)", " ");
-		while (x < b) {
-			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
-			System.out.printf("|%3s%-7.3f%3s|%3s%-7.3f%3s|\n", " ", x, " ", " ", result, " ");
-			x += dx;
-		}
-		
-		if (x-dx <= b) {
-			x = b;
-			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
-			System.out.printf("|%3s%-7.3f%3s|%3s%-7.3f%3s|\n", " ", x, " ", " ", result, " ");
-			x += dx;
-		}
+		equation = new Equation(a, b, dx);
+		System.out.printf("%s",equation.findResult());
 	}
 }

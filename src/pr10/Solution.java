@@ -6,8 +6,7 @@ import java.io.InputStreamReader;
 
 class Solution {
 	private int n;
-	double el;
-	private double[][] mas1;
+	private TwoDimansialArray mas1;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 	void start() {
@@ -21,28 +20,12 @@ class Solution {
 				if (n <= 0 | n % 2 != 0) {
 					continue;
 				}
-				mas1 = new double[n][n];
+				mas1 = new TwoDimansialArray(n);
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}
 		}
-		for (int i = 0; i < mas1.length; i++) {
-			for (int j = 0; j < mas1.length; j++) {
-				if (i % 2 == 0) {
-					mas1[i][j] = j + 1;
-				} else {
-					mas1[i][j] = n - j;
-				}
-			}
-		}
 		System.out.printf("%s\n", DialogMessages.RESULT.getMess());
-		
-		for (int i = 0; i < mas1.length; i++) {
-			for (int j = 0; j < mas1.length; j++) {
-				System.out.printf("%4.0f ",mas1[i][j]);
-			}
-			System.out.println("");
-		}
-
+		System.out.printf("%s", mas1.printArray2D());
 	}
 }

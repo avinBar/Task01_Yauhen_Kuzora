@@ -12,7 +12,6 @@ enum DialogMessages {
 
 	private DialogMessages(String message) {
 		this.message = message;
-
 	}
 
 	String getMess() {
