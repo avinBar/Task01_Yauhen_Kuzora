@@ -1,10 +1,10 @@
 package pr3;
 
 enum DialogMessages {
-	InputA("Please, input number a:\n"), 
-	InputB("Please, input number b:\n"), 
-	Square("Square:"),
-	Perimetr("Perim:");
+	INPUT_A("Please, input number a:\n"), 
+	INPUT_B("Please, input number b:\n"), 
+	SQUARE("Square:"),
+	PERIMERT("Perim:");
 	private String message;
 
 	private DialogMessages(String message) {

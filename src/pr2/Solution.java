@@ -12,7 +12,7 @@ class Solution {
 	void start() {
 		String string;
 		while (true) {
-			System.out.printf("%s", DialogMessages.InputA.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_A.getMess());
 			try {
 				string = reader.readLine();
 				a = Double.parseDouble(string);
@@ -21,11 +21,11 @@ class Solution {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.printf("%s", DialogMessages.InputA.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_A.getMess());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.InputB.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_B.getMess());
 			try {
 				string = reader.readLine();
 				b = Double.parseDouble(string);
@@ -34,11 +34,11 @@ class Solution {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.printf("%s", DialogMessages.InputB.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_B.getMess());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.InputC.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_C.getMess());
 			try {
 				string = reader.readLine();
 				c = Double.parseDouble(string);
@@ -47,11 +47,11 @@ class Solution {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.printf("%s", DialogMessages.InputC.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_C.getMess());
 			}
 		}
 		result = (b + Math.sqrt(b * b + 4 * a * c) / (2 * a)) - a * a * a * c + 1 / (b * b);
-		System.out.printf("%s %6.3f", DialogMessages.Result.getMess(), result);
+		System.out.printf("%s %6.3f", DialogMessages.RESULT.getMess(), result);
 
 	}
 }

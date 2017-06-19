@@ -6,13 +6,14 @@ import java.io.InputStreamReader;
 import pr3.DialogMessages;
 
 class Solution {
-	private double a, b, c, S, P;
+	private double a, b;
+	Triangle triangle;
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 	void start() {
 		String string;
 		while (true) {
-			System.out.printf("%s", DialogMessages.InputA.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_A.getMess());
 			try {
 				string = reader.readLine();
 				a = Double.parseDouble(string);
@@ -21,11 +22,11 @@ class Solution {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.printf("%s", DialogMessages.InputA.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_A.getMess());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.InputB.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_B.getMess());
 			try {
 				string = reader.readLine();
 				b = Double.parseDouble(string);
@@ -34,14 +35,12 @@ class Solution {
 				}
 				break;
 			} catch (Exception e) {
-				System.out.printf("%s", DialogMessages.InputB.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_B.getMess());
 			}
 		}
-		c = Math.sqrt(a * a + b * b);
-		P = a + b + c;
-		S = a*b/2;
-		System.out.printf("%7s %6.3f\n", DialogMessages.Perimetr.getMess(), P);
-		System.out.printf("%7s %6.3f\n", DialogMessages.Square.getMess(), S);
+		triangle = new Triangle(a, b);
+		System.out.printf("%7s %6.3f\n", DialogMessages.PERIMERT.getMess(), triangle.findPerim());
+		System.out.printf("%7s %6.3f\n", DialogMessages.SQUARE.getMess(), triangle.findSquare());
 
 	}
 }
