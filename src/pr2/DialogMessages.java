@@ -1,6 +1,6 @@
 package pr2;
 
-enum DialogMessages {
+public enum DialogMessages {
 	INPUT_A("Please, input number a:\n"), 
 	INPUT_B("Please, input number b:\n"), 
 	INPUT_C("Please, input number c:\n"), 
@@ -9,10 +9,9 @@ enum DialogMessages {
 
 	private DialogMessages(String message) {
 		this.message = message;
-
 	}
 
-	String getMessage() {
+	public String getMessage() {
 		return this.message;
 	}
 }

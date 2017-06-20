@@ -1,23 +1,17 @@
-package pr3;
+package pr2;
 
-public class Triangle {
-	double a;
-	double b;
-	double c;
-	double perim;
+public class Data {
+	private double a;
+	private double b;
+	private double c;
+	private double result;
 
-	public Triangle() {
+	public double getResult() {
+		return result;
 	}
 
-	public Triangle(double a, double b, double c) {
-		this.a = a;
-		this.b = b;
-		this.c = c;
-		this.perim = a + b + c;
-	}
-
-	public double getPerim() {
-		return perim;
+	public void setResult() {
+		result = (b + Math.sqrt(b * b + 4 * a * c) / (2 * a)) - a * a * a * c + 1 / (b * b);
 	}
 
 	public double getA() {
@@ -43,4 +37,5 @@ public class Triangle {
 	public void setC(double c) {
 		this.c = c;
 	}
+
 }

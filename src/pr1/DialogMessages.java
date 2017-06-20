@@ -1,6 +1,6 @@
 package pr1;
 
-enum DialogMessages {
+public enum DialogMessages {
 	INPUT_FOUR_DIGIT_NUMBER("Please input four-digit number or 'q' for quit:\n"), 
 	RESULT("Resuls:"), 
 	NUMBER("Number:"), 
@@ -12,7 +12,7 @@ enum DialogMessages {
 		this.message = message;
 	}
 
-	String getMess() {
+	public String getMess() {
 		return this.message;
 	}
 }

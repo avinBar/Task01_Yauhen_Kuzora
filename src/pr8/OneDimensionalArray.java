@@ -3,12 +3,10 @@ package pr8;
 class OneDimensionalArray {
 	private int size;
 	private int[] mas;
-	private int ckeckNumber;
 
-	OneDimensionalArray(int size, int k) {
+	OneDimensionalArray(int size) {
 		this.size = size;
 		mas = new int[size];
-		this.ckeckNumber = k;
 	}
 
 	int getSize() {
@@ -19,7 +17,7 @@ class OneDimensionalArray {
 		return mas;
 	}
 
-	int findSum() {
+	int findSum(int ckeckNumber) {
 		int sum = 0;
 		for (int i : mas) {
 			if ((i % ckeckNumber) == 0) {
