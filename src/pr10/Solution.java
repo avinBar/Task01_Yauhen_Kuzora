@@ -21,6 +21,7 @@ class Solution {
 					continue;
 				}
 				mas1 = new TwoDimansialArray(n);
+				reader.close();
 				break;
 			} catch (IOException | NumberFormatException e) {
 			}

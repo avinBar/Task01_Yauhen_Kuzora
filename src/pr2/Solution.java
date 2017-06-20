@@ -13,7 +13,7 @@ class Solution {
 	void start() {
 		String string;
 		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_A.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_A.getMessage());
 			try {
 				string = reader.readLine();
 				a = Double.parseDouble(string);
@@ -22,11 +22,11 @@ class Solution {
 				}
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.INPUT_A.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_A.getMessage());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_B.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_B.getMessage());
 			try {
 				string = reader.readLine();
 				b = Double.parseDouble(string);
@@ -35,11 +35,11 @@ class Solution {
 				}
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.INPUT_B.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_B.getMessage());
 			}
 		}
 		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_C.getMess());
+			System.out.printf("%s", DialogMessages.INPUT_C.getMessage());
 			try {
 				string = reader.readLine();
 				c = Double.parseDouble(string);
@@ -48,11 +48,11 @@ class Solution {
 				}
 				break;
 			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.INPUT_C.getMess());
+				System.out.printf("%s", DialogMessages.INPUT_C.getMessage());
 			}
 		}
 		result = (b + Math.sqrt(b * b + 4 * a * c) / (2 * a)) - a * a * a * c + 1 / (b * b);
-		System.out.printf("%s %6.3f", DialogMessages.RESULT.getMess(), result);
+		System.out.printf("%s %6.3f", DialogMessages.RESULT.getMessage(), result);
 
 	}
 }
