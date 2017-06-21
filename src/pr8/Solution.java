@@ -38,9 +38,11 @@ class Solution {
 			} catch (IOException | NumberFormatException e) {
 			}
 		}
+
 		array = new OneDimensionalArray(n);
 		System.out.printf("%s", DialogMessages.INPUT_MAS.getMess());
-		for (int i = 0; i < array.getSize(); i++) {
+
+		for (int i = 0; i < array.getArray().length; i++) {
 			while (true) {
 				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
 				try {
@@ -55,6 +57,7 @@ class Solution {
 				}
 			}
 		}
+
 		System.out.printf("%s %-7d\n", DialogMessages.RESULT.getMess(), array.findSum(k));
 	}
 }

@@ -4,7 +4,7 @@ import pr7.Conditions.ConditionA;
 import pr7.Conditions.ConditionB;
 import pr7.Conditions.ConditionDx;
 
-class Solution {
+public class Solution {
 	private Equation equation;
 	private double a, b, dx;
 	private ConsoleHelper helper = new ConsoleHelper();

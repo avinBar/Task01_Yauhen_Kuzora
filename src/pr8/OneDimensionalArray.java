@@ -1,25 +1,23 @@
 package pr8;
 
-class OneDimensionalArray {
-	private int size;
-	private int[] mas;
+public class OneDimensionalArray {
+	private int[] array;
 
-	OneDimensionalArray(int size) {
-		this.size = size;
-		mas = new int[size];
+	public OneDimensionalArray(int size) {
+		array = new int[size];
 	}
 
-	int getSize() {
-		return size;
+	public int[] getArray() {
+		return array;
 	}
 
-	int[] getArray() {
-		return mas;
+	public void setArray(int[] array) {
+		this.array = array;
 	}
 
-	int findSum(int ckeckNumber) {
+	public int findSum(int ckeckNumber) {
 		int sum = 0;
-		for (int i : mas) {
+		for (int i : array) {
 			if ((i % ckeckNumber) == 0) {
 				sum += i;
 			}

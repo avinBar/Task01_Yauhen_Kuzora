@@ -16,16 +16,16 @@ public class Equation {
 		double result;
 		double x = a;
 		String resultToString = "";
-		resultToString += String.format("|%3s%-7s%3s|%3s%-7s%3s|\n", " ", "x", " ", " ", "f(x)", " ");
+		resultToString += String.format("|%3s%-8s%3s|%3s%-8s%3s|\n", " ", "x", " ", " ", "f(x)", " ");
 		while (x < b) {
 			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
-			resultToString += String.format("|%3s%-7.3f%3s|%3s%-7.3f%3s|\n", " ", x, " ", " ", result, " ");
+			resultToString += String.format("|%3s%-8.3f%3s|%3s%-8.3f%3s|\n", " ", x, " ", " ", result, " ");
 			x += dx;
 		}
 		if (x - dx <= b) {
 			x = b;
 			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
-			resultToString += String.format("|%3s%-7.3f%3s|%3s%-7.3f%3s|\n", " ", x, " ", " ", result, " ");
+			resultToString += String.format("|%3s%-8.3f%3s|%3s%-8.3f%3s|\n", " ", x, " ", " ", result, " ");
 			x += dx;
 		}
 		return resultToString;
