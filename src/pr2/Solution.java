@@ -3,10 +3,11 @@ package pr2;
 import pr2.DialogMessages;
 
 public class Solution {
+	private double a, b, c, result;
+	private ConsoleHelper helper = new ConsoleHelper();
+	private Data data = new Data();
+
 	public void start() {
-		double a, b, c, result;
-		ConsoleHelper helper = new ConsoleHelper();
-		Data data = new Data();
 		a = helper.inputNumber(data, DialogMessages.INPUT_A.getMessage());
 		data.setA(a);
 		b = helper.inputNumber(data, DialogMessages.INPUT_B.getMessage());

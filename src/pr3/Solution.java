@@ -5,9 +5,9 @@ import pr3.DialogMessages;
 public class Solution {
 	private RightTriangle triangle;
 	private ConsoleHelper helper = new ConsoleHelper();
+	private double a, b;
 
 	public void start() {
-		double a, b;
 		a = helper.inputTriangeSide(DialogMessages.INPUT_A.getMess());
 		b = helper.inputTriangeSide(DialogMessages.INPUT_B.getMess());
 		triangle = new RightTriangle(a, b);
