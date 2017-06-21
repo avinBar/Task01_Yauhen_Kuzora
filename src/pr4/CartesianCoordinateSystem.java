@@ -1,20 +1,20 @@
 package pr4;
 
-class CartesianCoordinateSystem {
-	private double x, y;
+import java.util.ArrayList;
 
-	CartesianCoordinateSystem(double x, double y) {
-		this.x = x;
-		this.y = y;
+class CartesianCoordinateSystem {
+	private ArrayList<Area> checkedAreas = new ArrayList<>();
+
+	public CartesianCoordinateSystem() {
 	}
 
-	boolean checkArea() {
-		if (this.y >= -4 & this.y <= 0) {
-			if (this.x >= -4 & this.x <= 4) {
-				return true;
-			}
-		} else if (this.y >= 0 & this.y <= 4) {
-			if (this.x >= -2 & this.x <= 2) {
+	public void addAreaInCheckedArea(Area area) {
+		checkedAreas.add(area);
+	}
+
+	public boolean checkPointInAllChoosenAreas(TDCoordinates point) {
+		for (Area area : checkedAreas) {
+			if (area.checkPointInArea(point)) {
 				return true;
 			}
 		}

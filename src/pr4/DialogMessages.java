@@ -1,6 +1,6 @@
 package pr4;
 
-enum DialogMessages {
+public enum DialogMessages {
 	INPUT_X("Please, input number x:\n"), 
 	INPUT_Y("Please, input number y:\n"), 
 	RESULT("Result :");
@@ -10,7 +10,7 @@ enum DialogMessages {
 		this.message = message;
 	}
 
-	String getMess() {
+	public String getMess() {
 		return this.message;
 	}
 }
