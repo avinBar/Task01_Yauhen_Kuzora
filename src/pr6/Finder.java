@@ -1,17 +1,7 @@
 package pr6;
 
-class Finder {
-	private double first;
-	private double second;
-	private double third;
-
-	public Finder(double first, double second, double third) {
-		this.first = first;
-		this.second = second;
-		this.third = third;
-	}
-
-	double findResult() {
+public class Finder {
+	public double findResult(double first, double second, double third) {
 		double result;
 		double min = first;
 		double max = first;

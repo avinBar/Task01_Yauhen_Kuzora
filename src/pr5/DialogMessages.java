@@ -1,6 +1,6 @@
 package pr5;
 
-enum DialogMessages {
+public enum DialogMessages {
 	INPUT_THREE("Please, input three numbers.\n"), 
 	FIRST_NUMBER("Please, input first number: \n"), 
 	SECOND_NUMBER("Please, input second number: \n"), 
@@ -12,7 +12,7 @@ enum DialogMessages {
 		this.message = message;
 	}
 
-	String getMess() {
+	public String getMessage() {
 		return this.message;
 	}
 }

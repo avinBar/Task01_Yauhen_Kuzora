@@ -12,7 +12,7 @@ enum DialogMessages {
 		this.message = message;
 	}
 
-	String getMess() {
+	public String getMess() {
 		return this.message;
 	}
 }

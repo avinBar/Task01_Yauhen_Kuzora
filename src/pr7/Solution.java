@@ -1,55 +1,21 @@
 package pr7;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import pr7.Conditions.ConditionA;
+import pr7.Conditions.ConditionB;
+import pr7.Conditions.ConditionDx;
 
 class Solution {
 	private Equation equation;
 	private double a, b, dx;
-	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private ConsoleHelper helper = new ConsoleHelper();
 
-	void start() {
-		String string;
-		System.out.printf("%s", DialogMessages.INPUT_DATA.getMess());
-
-		while (true) {
-			System.out.printf("%s", DialogMessages.FIRST_A.getMess());
-			try {
-				string = reader.readLine();
-				a = Double.parseDouble(string);
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.FIRST_A.getMess());
-			}
-		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.SECOND_B.getMess());
-			try {
-				string = reader.readLine();
-				b = Double.parseDouble(string);
-				if (b < a) {
-					continue;
-				}
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.SECOND_B.getMess());
-			}
-		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.DX.getMess());
-			try {
-				string = reader.readLine();
-				dx = Double.parseDouble(string);
-				if (dx > b - a && dx < 0) {
-					continue;
-				}
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.DX.getMess());
-			}
-		}
+	public void start() {
+		equation = new Equation();
+		helper.printArg(DialogMessages.INPUT_DATA.getMess());
+		a = helper.inputNumber(DialogMessages.FIRST_A.getMess(), equation, new ConditionA());
+		b = helper.inputNumber(DialogMessages.SECOND_B.getMess(), equation, new ConditionB());
+		dx = helper.inputNumber(DialogMessages.DX.getMess(), equation, new ConditionDx());
 		equation = new Equation(a, b, dx);
-		System.out.printf("%s",equation.findResult());
+		helper.printArg(equation.findResult());
 	}
 }

@@ -1,49 +1,18 @@
 package pr5;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-class Solution {
+public class Solution {
 	private double first, second, third;
-	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private ConsoleHelper helper = new ConsoleHelper();
 
-	void start() {
-		String string;
-		System.out.printf("%s", DialogMessages.INPUT_THREE.getMess());
-
-		while (true) {
-			System.out.printf("%s", DialogMessages.FIRST_NUMBER.getMess());
-			try {
-				string = reader.readLine();
-				first = Double.parseDouble(string);
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.FIRST_NUMBER.getMess());
-			}
-		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.SECOND_NUMBER.getMess());
-			try {
-				string = reader.readLine();
-				second = Double.parseDouble(string);
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.SECOND_NUMBER.getMess());
-			}
-		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.THIRD_NUMBER.getMess());
-			try {
-				string = reader.readLine();
-				third = Double.parseDouble(string);
-				break;
-			} catch (IOException | NumberFormatException e) {
-				System.out.printf("%s", DialogMessages.THIRD_NUMBER.getMess());
-			}
-		}
-		System.out.printf("%s %6.3f, %6.3f, %6.3f", DialogMessages.RESULT.getMess(), findResult(first),
-				findResult(second), findResult(third));
+	public void start() {
+		helper.printArg(DialogMessages.INPUT_THREE.getMessage());
+		first = helper.inputNumber(DialogMessages.FIRST_NUMBER.getMessage());
+		second = helper.inputNumber(DialogMessages.SECOND_NUMBER.getMessage());
+		third = helper.inputNumber(DialogMessages.THIRD_NUMBER.getMessage());
+		helper.printArg(DialogMessages.RESULT.getMessage());
+		helper.printArg(String.format("%7.3f", ((Double) findResult(first))));
+		helper.printArg(String.format("%7.3f", ((Double) findResult(second))));
+		helper.printArg(String.format("%7.3f", ((Double) findResult(third))));
 	}
 
 	private double findResult(double first) {
