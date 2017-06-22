@@ -16,6 +16,6 @@ class Solution {
 	}
 
 	private double findResult(double first) {
-		return (first >= 0) ? Math.pow(first, 2) : Math.pow(first, 4);
+		return Math.pow(first, (first >= 0) ? 2 : 4);
 	}
 }
