@@ -3,12 +3,12 @@ package pr6;
 import pr5.ConsoleHelper;
 import pr5.DialogMessages;
 
-public class Solution {
+class Solution {
 	private Finder finder = new Finder();
 	private double first, second, third;
 	private ConsoleHelper helper = new ConsoleHelper();
 
-	public void start() {
+	void start() {
 		helper.printArg(DialogMessages.INPUT_THREE.getMessage());
 		first = helper.inputNumber(DialogMessages.FIRST_NUMBER.getMessage());
 		second = helper.inputNumber(DialogMessages.SECOND_NUMBER.getMessage());

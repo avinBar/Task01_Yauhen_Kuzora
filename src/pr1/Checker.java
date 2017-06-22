@@ -3,8 +3,8 @@ package pr1;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Checker {
-	public boolean isFourDigitNumber(String fourDNumber) {
+class Checker {
+	boolean isFourDigitNumber(String fourDNumber) {
 		Pattern pat = Pattern.compile("[0-9]{4}");
 		Matcher mat;
 		try {
@@ -18,7 +18,7 @@ public class Checker {
 		return false;
 	}
 
-	public boolean isTrue(char[] chars) {
+	boolean isTrue(char[] chars) {
 		if (chars.length > 4) {
 			return false;
 		}

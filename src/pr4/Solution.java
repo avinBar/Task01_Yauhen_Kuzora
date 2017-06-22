@@ -1,6 +1,6 @@
 package pr4;
 
-public class Solution {
+class Solution {
 	private ConsoleHelper helper = new ConsoleHelper();
 	private CartesianCoordinateSystem system = new CartesianCoordinateSystem();
 	private double x, y;

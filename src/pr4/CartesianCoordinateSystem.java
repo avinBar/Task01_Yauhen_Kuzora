@@ -2,7 +2,7 @@ package pr4;
 
 import java.util.ArrayList;
 
-class CartesianCoordinateSystem {
+public class CartesianCoordinateSystem {
 	private ArrayList<Area> checkedAreas = new ArrayList<>();
 
 	public CartesianCoordinateSystem() {

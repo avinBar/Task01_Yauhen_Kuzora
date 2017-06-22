@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import pr7.Conditions.Condition;
+import pr7.Conditions.Checkable;
 
-public class ConsoleHelper {
+class ConsoleHelper {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-	public double inputNumber(String message, Equation equation, Condition condition) {
+	double inputNumber(String message, Equation equation, Checkable condition) {
 		double number;
 		String string;
 		while (true) {
@@ -28,7 +28,7 @@ public class ConsoleHelper {
 		return number;
 	}
 
-	public void printArg(Object arg) {
+	void printArg(Object arg) {
 		System.out.printf("%7s\n", arg);
 	}
 }

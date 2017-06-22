@@ -2,12 +2,12 @@ package pr3;
 
 import pr3.DialogMessages;
 
-public class Solution {
+class Solution {
 	private RightTriangle triangle;
 	private ConsoleHelper helper = new ConsoleHelper();
 	private double a, b;
 
-	public void start() {
+	void start() {
 		a = helper.inputTriangeSide(DialogMessages.INPUT_A.getMess());
 		b = helper.inputTriangeSide(DialogMessages.INPUT_B.getMess());
 		triangle = new RightTriangle(a, b);

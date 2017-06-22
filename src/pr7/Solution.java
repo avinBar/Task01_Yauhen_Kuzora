@@ -1,20 +1,22 @@
 package pr7;
 
-import pr7.Conditions.ConditionA;
-import pr7.Conditions.ConditionB;
-import pr7.Conditions.ConditionDx;
+import pr7.Conditions.CheckA;
+import pr7.Conditions.CheckB;
+import pr7.Conditions.CheckDx;
 
-public class Solution {
+class Solution {
 	private Equation equation = new Equation();
 	private double a, b, dx;
 	private ConsoleHelper helper = new ConsoleHelper();
 
-	public void start() {
+	void start() {
 		helper.printArg(DialogMessages.INPUT_DATA.getMess());
-		a = helper.inputNumber(DialogMessages.FIRST_A.getMess(), equation, new ConditionA());
-		b = helper.inputNumber(DialogMessages.SECOND_B.getMess(), equation, new ConditionB());
-		dx = helper.inputNumber(DialogMessages.DX.getMess(), equation, new ConditionDx());
-		equation = new Equation(a, b, dx);
+		a = helper.inputNumber(DialogMessages.FIRST_A.getMess(), equation, new CheckA());
+		equation.setA(a);
+		b = helper.inputNumber(DialogMessages.SECOND_B.getMess(), equation, new CheckB());
+		equation.setB(b);
+		dx = helper.inputNumber(DialogMessages.DX.getMess(), equation, new CheckDx());
+		equation.setDx(dx);
 		helper.printArg(equation.findResult());
 	}
 }

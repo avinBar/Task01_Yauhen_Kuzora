@@ -54,5 +54,4 @@ public class Equation {
 	public void setDx(double dx) {
 		this.dx = dx;
 	}
-
 }
