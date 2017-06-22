@@ -5,17 +5,9 @@ import java.util.regex.Pattern;
 
 class Checker {
 	boolean isFourDigitNumber(String fourDNumber) {
-		Pattern pat = Pattern.compile("[0-9]{4}");
-		Matcher mat;
-		try {
-			mat = pat.matcher(fourDNumber);
-		} catch (Exception e) {
-			return false;
-		}
-		if (mat.matches()) {
-			return true;
-		}
-		return false;
+		Pattern pattern = Pattern.compile("[0-9]{4}");
+		Matcher matcher = pattern.matcher(fourDNumber);
+		return matcher.matches();
 	}
 
 	boolean isTrue(char[] chars) {
@@ -27,9 +19,6 @@ class Checker {
 		b = Integer.parseInt(chars[1] + "");
 		c = Integer.parseInt(chars[2] + "");
 		d = Integer.parseInt(chars[3] + "");
-		if (a + b == c + d) {
-			return true;
-		}
-		return false;
+		return (a + b == c + d);
 	}
 }
