@@ -1,7 +1,7 @@
 package project.pr10;
 
 public class TwoDimansialArray {
-	private double[][] array;
+    private double[][] array;
 
 	public TwoDimansialArray(int size) {
 		this.array = new double[size][size];
