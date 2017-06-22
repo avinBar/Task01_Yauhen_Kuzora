@@ -19,19 +19,17 @@ public class OneDimensionalArray {
 		return mas3S;
 	}
 
-	public OneDimensionalArray insertArray2InArray(OneDimensionalArray mas1, OneDimensionalArray mas2, int k) {
-		OneDimensionalArray m = new OneDimensionalArray(mas1.array.length + mas2.array.length);
-		for (int i = 0; i < mas1.array.length; i++) {
-			m.getArray()[i] = mas1.getArray()[i];
+	public OneDimensionalArray insertArray2InArray(OneDimensionalArray array1, OneDimensionalArray array2, int k) {
+		OneDimensionalArray array = new OneDimensionalArray(array1.array.length + array2.array.length);
+		for (int i = 0; i < array1.array.length; i++) {
+			array.getArray()[i] = array1.getArray()[i];
 		}
-		for (int i = 0; i < mas1.array.length; i++) {
-			if (i >= k) {
-				m.getArray()[i + mas2.array.length] = m.getArray()[i];
-			}
+		for (int i = k; i < array1.array.length; i++) {
+			array.getArray()[i + array2.array.length] = array.getArray()[i];
 		}
-		for (int i = 0; i < mas2.array.length; i++) {
-			m.getArray()[k + i] = mas2.getArray()[i];
+		for (int i = 0; i < array2.array.length; i++) {
+			array.getArray()[k + i] = array2.getArray()[i];
 		}
-		return m;
+		return array;
 	}
 }
