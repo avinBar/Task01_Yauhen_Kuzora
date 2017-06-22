@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import pr7.Conditions.Checkable;
+import pr7.conditions.Checkable;
 
 class ConsoleHelper {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

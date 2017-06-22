@@ -5,8 +5,8 @@ enum DialogMessages {
 	INPUT_ARR1("Input count of element for first array(>0):\n"),
 	INPUT_ARR2("Input count of element for second array(>0):\n"),
 	INPUT_ELN("Input array's element.\n"),
-	INPUT_EL("Input element"),
-	INPUT_K("Input k(k<=count of element for second array):\n"),
+	INPUT_EL("Input element "),
+	INPUT_K("Input k (k<=count of elements first array):\n"),
 	RESULT("Result :");
 	private String message;
 

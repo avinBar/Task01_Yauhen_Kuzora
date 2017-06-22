@@ -1,4 +1,4 @@
-package pr7.Conditions;
+package pr7.conditions;
 
 import pr7.Equation;
 

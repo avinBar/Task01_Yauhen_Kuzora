@@ -1,86 +1,37 @@
 package pr9;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import pr8.ConsoleHelper;
+import pr8.conditions.*;
 
 class Solution {
 	private int n, m, k;
-	double el;
-	private OneDimensialArray mas1, mas2, mas3;
-	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private double el;
+	private OneDimensionalArray mas1, mas2, mas3;
+	private ConsoleHelperPr9 newHelper = new ConsoleHelperPr9();
+	private ConsoleHelper defaultHelper = new ConsoleHelper();
 
 	void start() {
-		String string;
-		System.out.printf("%s", DialogMessages.INPUT_DATA.getMess());
-		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_ARR1.getMess());
-			try {
-				string = reader.readLine();
-				n = Integer.parseInt(string);
-				if (n <= 0) {
-					continue;
-				}
-				mas1 = new OneDimensialArray(n);
-				break;
-			} catch (IOException | NumberFormatException e) {
-			}
+		defaultHelper.printArg(DialogMessages.INPUT_DATA.getMess());
+		n = (int) defaultHelper.inputUserNumber(DialogMessages.INPUT_ARR1.getMess(), new CheckLessOrEqZero());
+		mas1 = new OneDimensionalArray(n);
+		defaultHelper.printArg(DialogMessages.INPUT_ELN.getMess());
+		for (int i = 0; i < mas1.getArray().length; i++) {
+			el = (double) newHelper.inputUserNumber(String.format("%s [%d]: ", DialogMessages.INPUT_EL.getMess(), i),
+					new CheckK());
+			mas1.getArray()[i] = el;
 		}
-		System.out.printf("%s", DialogMessages.INPUT_ELN.getMess());
-		for (int i = 0; i < mas1.getSize(); i++) {
-			while (true) {
-				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
-				try {
-					string = reader.readLine();
-					el = Double.parseDouble(string);
-					mas1.getMas()[i] = el;
-					break;
-				} catch (IOException | NumberFormatException e) {
-				}
-			}
+		m = (int) defaultHelper.inputUserNumber(DialogMessages.INPUT_ARR2.getMess(), new CheckLessOrEqZero());
+		mas2 = new OneDimensionalArray(m);
+		defaultHelper.printArg(DialogMessages.INPUT_ELN.getMess());
+		for (int i = 0; i < mas2.getArray().length; i++) {
+			el = (double) newHelper.inputUserNumber(String.format("%s [%d]: ", DialogMessages.INPUT_EL.getMess(), i),
+					new CheckK());
+			mas2.getArray()[i] = el;
 		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_ARR2.getMess());
-			try {
-				string = reader.readLine();
-				m = Integer.parseInt(string);
-				if (m <= 0) {
-					continue;
-				}
-				mas2 = new OneDimensialArray(m);
-				break;
-			} catch (IOException | NumberFormatException e) {
-			}
-		}
-		System.out.printf("%s", DialogMessages.INPUT_ELN.getMess());
-		for (int i = 0; i < mas2.getSize(); i++) {
-			while (true) {
-				System.out.printf("%s [%d]:", DialogMessages.INPUT_EL.getMess(), i);
-				try {
-					string = reader.readLine();
-					el = Double.parseDouble(string);
-					mas2.getMas()[i] = el;
-					break;
-				} catch (IOException | NumberFormatException e) {
-				}
-			}
-		}
-		while (true) {
-			System.out.printf("%s", DialogMessages.INPUT_K.getMess());
-			try {
-				string = reader.readLine();
-				k = Integer.parseInt(string);
-				if (k <= 0 || k > n) {
-					continue;
-				}
-				mas3 = new OneDimensialArray(n + m);
-				break;
-			} catch (IOException | NumberFormatException e) {
-			}
-		}
-		System.out.printf("%s\n", DialogMessages.RESULT.getMess());
-		mas3 = mas3.arrayInArray2(mas1, mas2, k);
-		System.out.printf("%s", mas3.printArray());
+		k = (int) newHelper.inputUserNumber(DialogMessages.INPUT_K.getMess(), new CheckK(), mas1);
+		mas3 = new OneDimensionalArray(n + m);
+		newHelper.printArg(DialogMessages.RESULT.getMess());
+		mas3 = mas3.insertArray2InArray(mas1, mas2, k);
+		newHelper.printArg(mas3.printArray());
 	}
-
 }

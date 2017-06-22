@@ -1,43 +1,41 @@
 package pr10;
 
-class TwoDimansialArray {
-	private double[][] mas;
-	private int size;
+public class TwoDimansialArray {
+	private double[][] array;
 
-	TwoDimansialArray(int size) {
-		this.size = size;
-		this.mas = new double[size][size];
+	public TwoDimansialArray(int size) {
+		this.array = new double[size][size];
 		initArray();
 	}
 
 	private void initArray() {
-		for (int i = 0; i < mas.length; i++) {
-			for (int j = 0; j < mas.length; j++) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length; j++) {
 				if (i % 2 == 0) {
-					mas[i][j] = j + 1;
+					array[i][j] = j + 1;
 				} else {
-					mas[i][j] = size - j;
+					array[i][j] = getArray().length - j;
 				}
 			}
 		}
 	}
 
-	String printArray2D() {
+	public String printArray2D() {
 		String string = "";
-		for (int i = 0; i < mas.length; i++) {
-			for (int j = 0; j < mas.length; j++) {
-				string += String.format("%4.0f ", mas[i][j]);
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length; j++) {
+				string += String.format("%4.0f ", array[i][j]);
 			}
 			string += String.format("%s", "\n");
 		}
 		return string;
 	}
 
-	double[][] getArray() {
-		return this.mas;
+	public double[][] getArray() {
+		return this.array;
 	}
 
-	int getSize() {
-		return this.size;
+	public void setArray(double[][] array) {
+		this.array = array;
 	}
 }

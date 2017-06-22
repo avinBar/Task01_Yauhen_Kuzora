@@ -1,8 +1,8 @@
 package pr7;
 
-import pr7.Conditions.CheckA;
-import pr7.Conditions.CheckB;
-import pr7.Conditions.CheckDx;
+import pr7.conditions.CheckA;
+import pr7.conditions.CheckB;
+import pr7.conditions.CheckDx;
 
 class Solution {
 	private Equation equation = new Equation();
