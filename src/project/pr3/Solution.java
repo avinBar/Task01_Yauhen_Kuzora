@@ -11,7 +11,7 @@ class Solution {
 		a = helper.inputTriangeSide(DialogMessages.INPUT_A.getMess());
 		b = helper.inputTriangeSide(DialogMessages.INPUT_B.getMess());
 		triangle = new RightTriangle(a, b);
-		helper.printArg(DialogMessages.PERIMERT.getMess(), triangle.getPerim());
+		helper.printArg(DialogMessages.PERIMERT.getMess(), triangle.getPerimeter());
 		helper.printArg(DialogMessages.SQUARE.getMess(), triangle.getSquare());
 	}
 }

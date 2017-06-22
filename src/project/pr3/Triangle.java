@@ -4,7 +4,7 @@ public class Triangle {
 	double a;
 	double b;
 	double c;
-	double perim;
+	double perimeter;
 
 	public Triangle() {
 	}
@@ -13,11 +13,11 @@ public class Triangle {
 		this.a = a;
 		this.b = b;
 		this.c = c;
-		this.perim = a + b + c;
 	}
 
-	public double getPerim() {
-		return perim;
+	public double getPerimeter() {
+		this.perimeter = a + b + c;
+		return perimeter;
 	}
 
 	public double getA() {
