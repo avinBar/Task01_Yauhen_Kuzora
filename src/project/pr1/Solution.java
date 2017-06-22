@@ -8,7 +8,7 @@ class Solution {
 	private boolean result;
 
 	void start() {
-		fourDNumber = helper.input4DNumber(checker);
+		fourDNumber = helper.inputFourDigitNumber(checker);
 		result = checker.isTrue((parser.parseToChars(fourDNumber)));
 		helper.printResults(fourDNumber, result);
 	}

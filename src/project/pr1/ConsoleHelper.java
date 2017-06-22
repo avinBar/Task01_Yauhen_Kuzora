@@ -5,15 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class ConsoleHelper {
-	String input4DNumber(Checker checker) {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+	String inputFourDigitNumber(Checker checker) {
 		String fourDNumber;
 		System.out.printf("%s", DialogMessages.INPUT_FOUR_DIGIT_NUMBER.getMessage());
 		while (true) {
 			try {
 				fourDNumber = reader.readLine();
 				if (checker.isFourDigitNumber(fourDNumber) | fourDNumber.equals("q")) {
-					reader.close();
 					break;
 				} else {
 					System.out.printf("%s", DialogMessages.NOT_FOUR_DIGIT_NUMBER.getMessage());
