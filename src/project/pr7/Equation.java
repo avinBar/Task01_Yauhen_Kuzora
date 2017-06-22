@@ -18,15 +18,14 @@ public class Equation {
 		String resultToString = "";
 		resultToString += String.format("|%3s%-8s%3s|%3s%-8s%3s|\n", " ", "x", " ", " ", "f(x)", " ");
 		while (x < b) {
-			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
+			result = (Math.pow(Math.sin(x), 2)) - Math.cos(2 * x);
 			resultToString += String.format("|%3s%-8.3f%3s|%3s%-8.3f%3s|\n", " ", x, " ", " ", result, " ");
 			x += dx;
 		}
 		if (x - dx <= b) {
 			x = b;
-			result = (Math.sin(x) * Math.sin(x)) - Math.cos(2 * x);
+			result = (Math.pow(Math.sin(x), 2)) - Math.cos(2 * x);
 			resultToString += String.format("|%3s%-8.3f%3s|%3s%-8.3f%3s|\n", " ", x, " ", " ", result, " ");
-			x += dx;
 		}
 		return resultToString;
 	}

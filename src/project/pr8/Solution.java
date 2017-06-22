@@ -3,7 +3,7 @@ package project.pr8;
 import project.pr8.conditions.*;
 
 class Solution {
-	private int n, k, el;
+	private int n, k;
 	private OneDimensionalArray array;
 	private ConsoleHelper helper = new ConsoleHelper();
 
@@ -14,9 +14,8 @@ class Solution {
 		array = new OneDimensionalArray(n);
 		helper.printArg(DialogMessages.INPUT_MAS.getMess());
 		for (int i = 0; i < array.getArray().length; i++) {
-			el = (int) helper.inputUserNumber(DialogMessages.INPUT_EL.getMess() + String.format("[%d]: ", i),
-					new CheckLessZero());
-			array.getArray()[i] = el;
+			array.getArray()[i] = (int) helper.inputUserNumber(
+					DialogMessages.INPUT_EL.getMess() + String.format("[%d]: ", i), new CheckLessZero());
 		}
 		helper.printArg(String.format("%s %-7d\n", DialogMessages.RESULT.getMess(), array.findSum(k)));
 	}

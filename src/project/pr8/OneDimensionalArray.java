@@ -17,9 +17,9 @@ public class OneDimensionalArray {
 
 	public int findSum(int ckeckNumber) {
 		int sum = 0;
-		for (int i : array) {
-			if ((i % ckeckNumber) == 0) {
-				sum += i;
+		for (int number : array) {
+			if ((number % ckeckNumber) == 0) {
+				sum += number;
 			}
 		}
 		return sum;

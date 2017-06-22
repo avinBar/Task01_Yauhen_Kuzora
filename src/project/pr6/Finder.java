@@ -2,7 +2,6 @@ package project.pr6;
 
 public class Finder {
 	public double findResult(double first, double second, double third) {
-		double result;
 		double min = first;
 		double max = first;
 		if (second >= max) {
@@ -17,7 +16,6 @@ public class Finder {
 		if (third <= min) {
 			min = third;
 		}
-		result = max + min;
-		return result;
+		return max + min;
 	}
 }
