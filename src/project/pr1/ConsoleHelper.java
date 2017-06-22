@@ -26,12 +26,11 @@ class ConsoleHelper {
 	}
 
 	void printResults(String fourDNumber, boolean result) {
-		if (fourDNumber.equals("q")) {
-			System.out.printf("%s", DialogMessages.END.getMessage());
-		} else {
+		if (!fourDNumber.equals("q")) {
 			System.out.printf("%s %s\n", DialogMessages.NUMBER.getMessage(), fourDNumber);
 			System.out.printf("%s %s\n", DialogMessages.RESULT.getMessage(), result);
 			System.out.printf("%s", DialogMessages.END.getMessage());
 		}
+		System.out.printf("%s", DialogMessages.END.getMessage());
 	}
 }
