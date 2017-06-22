@@ -14,7 +14,6 @@ class Solution {
 		data.setB(b);
 		c = helper.inputNumber(data, DialogMessages.INPUT_C.getMessage());
 		data.setC(c);
-		data.setResult();
 		result = data.getResult();
 		helper.printArg(DialogMessages.RESULT.getMessage(), result);
 	}

@@ -7,11 +7,8 @@ public class Data {
 	private double result;
 
 	public double getResult() {
+		result = (b + Math.sqrt(b * b + 4 * a * c) / (2 * a)) - Math.pow(a, 3) * c + 1 / (b * b);
 		return result;
-	}
-
-	public void setResult() {
-		result = (b + Math.sqrt(b * b + 4 * a * c) / (2 * a)) - a * a * a * c + 1 / (b * b);
 	}
 
 	public double getA() {
