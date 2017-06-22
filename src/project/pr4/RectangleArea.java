@@ -49,14 +49,9 @@ public class RectangleArea extends Area {
 	}
 
 	public boolean checkPointInArea(TDCoordinates point) {
-		if (((point.getX() >= this.f1.getX() & point.getY() >= this.f1.getY())
+		return ((point.getX() >= this.f1.getX() & point.getY() >= this.f1.getY())
 				& (point.getX() >= this.f2.getX() & point.getY() <= this.f2.getY()))
 				& ((point.getX() <= this.f3.getX() & point.getY() <= this.f3.getY())
-						& (point.getX() <= this.f4.getX() & point.getY() >= this.f4.getY()))) {
-			return true;
-		}
-
-		return false;
+						& (point.getX() <= this.f4.getX() & point.getY() >= this.f4.getY()));
 	}
-
 }
