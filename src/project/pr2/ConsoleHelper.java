@@ -24,6 +24,6 @@ class ConsoleHelper {
 	}
 
 	void printArg(String message, Object arg) {
-		System.out.printf("%s %6.3f", message, arg);
+		System.out.printf("%s %f", message, arg);
 	}
 }
