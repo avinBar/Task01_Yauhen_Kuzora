@@ -15,7 +15,7 @@ class Solution {
 		helper.printArg(String.format("%7.3f", ((Double) findResult(third))));
 	}
 
-	private double findResult(double first) {
+	double findResult(double first) {
 		return Math.pow(first, (first >= 0) ? 2 : 4);
 	}
 }
