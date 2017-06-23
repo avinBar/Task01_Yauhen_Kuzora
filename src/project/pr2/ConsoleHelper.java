@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 class ConsoleHelper {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-	double inputNumber(Data data, String message) {
+	double inputNumber(String message) {
 		String string;
 		double a;
 		while (true) {
