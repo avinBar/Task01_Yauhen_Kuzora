@@ -6,6 +6,12 @@ public class Data {
 	private double c;
 	private double result;
 
+	public Data(double a, double b, double c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+
 	public double getResult() {
 		result = ((b + Math.sqrt(Math.pow(b, 2) + 4 * a * c)) / (2 * a)) - Math.pow(a, 3) * c + Math.pow(b, -2);
 		return result;
