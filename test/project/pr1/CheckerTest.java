@@ -38,11 +38,10 @@ public class CheckerTest {
 	public Object[][] dp1() {
 		return new Object[][] { new Object[] { '0', '0', '0', '0' }, //
 				new Object[] { '9', '9', '9', '9' }, //
-				new Object[] { '1', '2', '1', '2' }, //
-				new Object[] { '1', '2', '2', '1' }, //
+				new Object[] { '1', '4', '2', '3' }, //
+				new Object[] { '7', '1', '5', '2' }, //
 				new Object[] { '2', '1', '2', '1' }, //
-				new Object[] { '2', '1', '2', '1' }, //
-				new Object[] { '2', '1', '1', '2' },//
+				new Object[] { '1', '2', '2', '1' },//
 		};
 	}
 

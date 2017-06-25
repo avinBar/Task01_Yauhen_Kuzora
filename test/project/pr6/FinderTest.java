@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class FinderTest {
 	private Finder finder;
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "testData")
 	public void tst_findResult(double result, double first, double second, double third) {
 		Assert.assertEquals(finder.findResult(first, second, third), result);
 	}
@@ -24,7 +24,7 @@ public class FinderTest {
 		finder = null;
 	}
 
-	@DataProvider
+	@DataProvider(name="testData")
 	public Object[][] dp() {
 		return new Object[][] { //
 				new Object[] { 2, 1, 1, 1 }, //

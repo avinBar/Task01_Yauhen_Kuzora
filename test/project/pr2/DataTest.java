@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class DataTest {
 	private Data data;
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "testFormulaData")
 	public void tst_DataConstructor(double expected,double a, double b, double c) {
 		data=new Data(a,b,c);
 		Assert.assertEquals(data.getA(), a);
@@ -16,7 +16,7 @@ public class DataTest {
 		Assert.assertEquals(data.getC(), c);
 	}
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "testFormulaData")
 	public void tst_getResult(double expected, double a, double b, double c) {
 		data = new Data(a, b, c);
 		Assert.assertEquals(data.getResult(), expected);
@@ -28,7 +28,7 @@ public class DataTest {
 		data=null;
 	}
 
-	@DataProvider
+	@DataProvider(name="testFormulaData")
 	public Object[][] dp() {
 		return new Object[][] { new Object[] { Double.NaN, 1, 1, -1 }, //
 				new Object[] { 1.618033988749895, 1, 1, 1 },//

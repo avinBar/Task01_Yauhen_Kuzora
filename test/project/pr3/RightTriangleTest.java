@@ -9,20 +9,20 @@ import org.testng.annotations.DataProvider;
 public class RightTriangleTest {
 	private RightTriangle rightTriangle;
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "testRightTriangleData")
 	public void tst_getSquare(double perimeter,double square,double a,double b) {
 		rightTriangle=new RightTriangle(a,b);
 		Assert.assertEquals(rightTriangle.getSquare(), square);
 	}
 	
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "dtestRightTriangleData")
 	public void tst_getPerimeter(double perimeter,double square,double a,double b) {
 		rightTriangle=new RightTriangle(a,b);
 		Assert.assertEquals(rightTriangle.getPerimeter(), perimeter,0.001);
 		
 	}
 	
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "testRightTriangleData")
 	public void tst_rightTriangle_constructor(double perimeter,double square,double a,double b) {
 		rightTriangle=new RightTriangle(a,b);
 		double c=Math.sqrt(a*a+b*b);
@@ -40,7 +40,7 @@ public class RightTriangleTest {
 		rightTriangle=null;
 	}
 
-	@DataProvider
+	@DataProvider (name="testRightTriangleData")
 	public Object[][] dp() {
 		return new Object[][] { new Object[] { 3.414213, 0.5, 1, 1 },//
 			new Object[] { 12, 6, 3, 4 },//
