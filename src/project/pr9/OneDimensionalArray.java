@@ -7,6 +7,10 @@ public class OneDimensionalArray {
 		this.array = new double[size];
 	}
 
+	public void setArray(double[] array) {
+		this.array = array;
+	}
+
 	public double[] getArray() {
 		return this.array;
 	}
