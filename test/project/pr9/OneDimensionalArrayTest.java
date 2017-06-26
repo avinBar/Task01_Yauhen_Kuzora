@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 public class OneDimensionalArrayTest {
 	private OneDimensionalArray array;
+	private double[] checkPrintArray={2, 7, 5, 6};
+	private String checkPrintString="2.000 \n7.000 \n5.000 \n6.000 \n";
 
 	@Test(dataProvider = "testOneDimArrayData")
 	public void insertArray2InArray(double[] arr1, double[] arr2, double[] result, int k) {
@@ -16,6 +18,13 @@ public class OneDimensionalArrayTest {
 		array2.setArray(arr2);
 		array = new OneDimensionalArray(arr1.length + arr2.length);
 		Assert.assertEquals(array.insertArray2InArray(array1, array2, k).getArray(), result);
+	}
+	
+	@Test
+	public void tst_printArray() {
+		array = new OneDimensionalArray(checkPrintArray.length);
+		array.setArray(checkPrintArray);
+		Assert.assertEquals(array.printArray(), checkPrintString);
 	}
 
 	@AfterMethod

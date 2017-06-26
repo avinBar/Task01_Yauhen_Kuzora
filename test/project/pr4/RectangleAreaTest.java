@@ -40,6 +40,9 @@ public class RectangleAreaTest {
     return new Object[][] {
       new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,4),new TDCoordinates(2,0),new TDCoordinates(1,1) },//
       new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,4),new TDCoordinates(2,0),new TDCoordinates(0,0) },//
+      new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,4),new TDCoordinates(2,0),new TDCoordinates(-2,2) },//
+      new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,4),new TDCoordinates(2,0),new TDCoordinates(0,4) },//
+      new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,4),new TDCoordinates(2,0),new TDCoordinates(2,2) },//
       new Object[] { new TDCoordinates(-2,0),new TDCoordinates(-2,4),new TDCoordinates(2,0),new TDCoordinates(2,4),new TDCoordinates(0,2) },//
       new Object[] { new TDCoordinates(-4,-3),new TDCoordinates(-4,0),new TDCoordinates(4,0),new TDCoordinates(4,-3),new TDCoordinates(-4,0) },//
     };
